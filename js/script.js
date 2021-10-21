@@ -74,7 +74,7 @@ makeList("cats");
 
 // Question 8
 
-function createCats (cats) {
+function createCatsContainer (cats) {
 
     let html = "";
 
@@ -96,7 +96,7 @@ function createCats (cats) {
 
 }
 
-const newHTML = createCats(cats);
+const newHTML = createCatsContainer(cats);
 
 const catsContainer = document.querySelector(".cat-container");
 catsContainer.innerHTML = newHTML;
