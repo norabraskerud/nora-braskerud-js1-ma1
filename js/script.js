@@ -1,4 +1,3 @@
-// Question 1
 const cats = [
     {
         name: "Blob",
@@ -13,6 +12,8 @@ const cats = [
     }
 ];
 
+
+// Question 1
 
 function complain (cat) {
     console.log(cat);
@@ -43,11 +44,59 @@ console.log(heading.className);
 
 // Question 5
 
-const paragraphs = document.querySelectorAll("p");
+var paragraphs = document.querySelectorAll("p");
 
-
-for (let i = 0; i < paragraphs.length; i++);
 console.log(paragraphs);
+
+for (var i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "red";
+}
 
 
  
+// Question 6
+
+const resultsContainer = document.querySelector(".results");
+
+console.log(resultsContainer.innerHTML)
+
+resultsContainer.innerHTML ="<p> New Paragraph </p>";
+resultsContainer.style.backgroundColor = "yellow";
+
+// Question 7
+
+function makeList (list) {
+    for(var i = 0; i < list.length; i++); 
+    console.log(list);
+}
+
+makeList("cats");
+
+// Question 8
+
+function createCats (cats) {
+
+    let html = "";
+
+    for(let i = 0; i < cats.length; i++){
+
+        let catsAgeMissing = "Age unknown";
+
+        if (cats[i].age) {
+            catsAgeMissing = cats[i].age; 
+        } 
+
+        html += `<div class= "cats">
+                <h5> ${cats[i].name}</h5>
+                <p> age: ${catsAgeMissing}<p>
+                </div>`;
+    }
+
+    return html;
+
+}
+
+const newHTML = createCats(cats);
+
+const catsContainer = document.querySelector(".cat-container");
+catsContainer.innerHTML = newHTML;
